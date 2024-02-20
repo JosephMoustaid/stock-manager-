@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1687197902 source:c:\users\moustaid\documents\school\pasd\projet 2 pasd\projet 2\main.c
+	<stdio.h>
+	<conio.h>
+	<stdlib.h>
+	"commande.h"
+
+1687208207 c:\users\moustaid\documents\school\pasd\projet 2 pasd\projet 2\commande.h
+
+1687276936 source:c:\users\moustaid\documents\school\pasd\projet 2 pasd\projet 2\commande.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"commande.h"
+

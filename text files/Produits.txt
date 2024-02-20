@@ -1,0 +1,5 @@
+150 	 produit1 	 reference1 	 categorie1 	 marque1 
+120 	 produit2 	 reference2 	 categorie2 	 marque2 
+300 	 produit3 	 reference3 	 categorie3 	 marque3 
+150 	 produit3 	 reference3 	 categorie4 	 marque5 
+150 	 p5 	 ref5 	 cat5 	 m5 
