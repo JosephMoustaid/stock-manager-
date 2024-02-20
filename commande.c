@@ -215,7 +215,7 @@ int SupprimerProduit_ListeProduits(ListeProduits* listeProduits,char* refeerence
         precedent=courant;
         courant=courant->suivant;
     }
-    if(courant==NULL) return 0;  //pas trouvé
+    if(courant==NULL) return 0;  //pas trouvÃ©
 
     if(precedent==NULL && courant->suivant==NULL)//un seule element
         listeProduits->element=NULL;
@@ -254,7 +254,7 @@ int SupprimerProduit_listeLigneCommande(ListeLigneCommande* listeLigneCommande,c
         precedent=courant;
         courant=courant->suivant;
     }
-    if(courant==NULL) return 0;  //pas trouvé
+    if(courant==NULL) return 0;  //pas trouvÃ©
 
     if(precedent==NULL && courant->suivant==NULL)//un seule element
         listeLigneCommande->element=NULL;
@@ -293,7 +293,7 @@ int SupprimerCommande(ListeCommandes* listeCommandes, int numero)
         precedent=courant;
         courant=courant->suivant;
     }
-    if(courant==NULL) return 0;  //pas trouvé
+    if(courant==NULL) return 0;  //pas trouvÃ©
 
     if(precedent==NULL && courant->suivant==NULL)//un seule element
         listeCommandes->element=NULL;
@@ -396,9 +396,9 @@ void charger_les_donnees(ListeCommandes** listeCommandes,ListeLigneCommande** li
 {
     int values_read=1, lignesread=1, numero_commande;
 
-    FILE *f_Commandes=fopen("C:\\Users\\moustaid\\Documents\\school\\PASD\\projet 2 PASD\\projet 2\\text files\\Commandes.txt","r");
-    FILE *f_LignesCommandes=fopen("C:\\Users\\moustaid\\Documents\\school\\PASD\\projet 2 PASD\\projet 2\\text files\\LignesCommandes.txt","r");
-    FILE *f_Produits=fopen("C:\\Users\\moustaid\\Documents\\school\\PASD\\projet 2 PASD\\projet 2\\text files\\Produits.txt","r");
+    FILE *f_Commandes=fopen("text files\\Commandes.txt","r");
+    FILE *f_LignesCommandes=fopen("text files\\LignesCommandes.txt","r");
+    FILE *f_Produits=fopen("text files\\Produits.txt","r");
 
     char empty_line[100];
 
@@ -473,9 +473,9 @@ void charger_les_donnees(ListeCommandes** listeCommandes,ListeLigneCommande** li
 //-----------------------------------------------------------------------
 void sauvegarder_les_donnees(ListeCommandes* listeCommandes,ListeLigneCommande* listeLigneCommande,ListeProduits* listeProduits)
 {
-    FILE *f_Commandes=fopen("C:\\Users\\moustaid\\Documents\\school\\PASD\\projet 2 PASD\\projet 2\\text files\\Commandes.txt", "a");
-    FILE *f_LignesCommandes=fopen("C:\\Users\\moustaid\\Documents\\school\\PASD\\projet 2 PASD\\projet 2\\text files\\LignesCommandes.txt", "a");
-    FILE *f_Produits=fopen("C:\\Users\\moustaid\\Documents\\school\\PASD\\projet 2 PASD\\projet 2\\text files\\Produits.txt", "a");
+    FILE *f_Commandes=fopen("text files\\Commandes.txt", "a");
+    FILE *f_LignesCommandes=fopen("text files\\LignesCommandes.txt", "a");
+    FILE *f_Produits=fopen("text files\\Produits.txt", "a");
 
     if (f_Produits == NULL || f_LignesCommandes == NULL || f_Commandes == NULL) {
         printf("Erreur lors de l'ouverture d'un des fichiers :\n");
@@ -495,7 +495,7 @@ void sauvegarder_les_donnees(ListeCommandes* listeCommandes,ListeLigneCommande* 
     //ecriture des produits
     if(courant_produit!=NULL)
     {
-       f_Produits=fopen("C:\\Users\\moustaid\\Documents\\school\\PASD\\projet 2 PASD\\projet 2\\text files\\Produits.txt", "w");
+       f_Produits=fopen("text files\\Produits.txt", "w");
        while(courant_produit!=NULL)
        {
            fprintf(f_Produits,"%d \t %s \t %s \t %s \t %s \n",courant_produit->produit->quantite_stock, courant_produit->produit->nom, courant_produit->produit->refereence, courant_produit->produit->categorie, courant_produit->produit->marque);
@@ -508,13 +508,13 @@ void sauvegarder_les_donnees(ListeCommandes* listeCommandes,ListeLigneCommande* 
     //ecriture des lignescommandes
     if(courant_commande!=NULL)
     {
-            f_Commandes=fopen("C:\\Users\\moustaid\\Documents\\school\\PASD\\projet 2 PASD\\projet 2\\text files\\Commandes.txt", "w");
+            f_Commandes=fopen("text files\\Commandes.txt", "w");
             while(courant_commande!=NULL)
             {
                 fprintf(f_Commandes,"%d \t %d \t %d \t %d \t %s \t %.2f \t %.2f \t %.2f \n",courant_commande->commande->numero,courant_commande->commande->date.jour,courant_commande->commande->date.mois,courant_commande->commande->date.annee,courant_commande->commande->nom_client,courant_commande->commande->montant_HT,courant_commande->commande->montant_TVA,courant_commande->commande->montant_TTC);
                 if(courant_commande->commande->listeLigneCommande!=NULL)
                 {
-                    f_LignesCommandes=fopen("C:\\Users\\moustaid\\Documents\\school\\PASD\\projet 2 PASD\\projet 2\\text files\\LignesCommandes.txt", "w");
+                    f_LignesCommandes=fopen("text files\\LignesCommandes.txt", "w");
                     courant_ligne_commande=courant_commande->commande->listeLigneCommande->element;
                     while(courant_ligne_commande!=NULL)
                     {
